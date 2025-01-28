@@ -1,0 +1,60 @@
+/* Reviews Container */
+.reviews-container {
+    display: flex;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    width: 100%;
+    height: 200px;
+    animation: scroll-left 15s linear infinite;
+}
+
+.reviews-container:hover {
+    animation-play-state: paused;
+    /* Stops animation on hover */
+}
+
+/* Individual Review Item */
+.review-item {
+    flex: 0 0 auto;
+    /* Prevent shrinking or growing */
+    margin-right: 16px;
+    /* Space between items */
+    background-color: #1a1a2e;
+    color: white;
+    border-radius: 8px;
+    padding: 16px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: left;
+}
+
+/* Review Content */
+.review-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Stars and Username */
+.review-content .flex {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.review-content p {
+    font-size: 14px;
+    margin: 4px 0;
+}
+
+/* Scrolling Animation */
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}

@@ -1,0 +1,32 @@
+[
+    {
+        "id": "1",
+        "img": "/synthesizer.jpeg",
+        "title": "Synthesizer",
+        "description": "Unlock the magic of electronic melodies and create immersive soundscapes"
+    },
+    {
+        "id": "2",
+        "img": "/Guitar.jpeg",
+        "title": "Guitar",
+        "description": "Strum your way to soulful expressions and captivating tunes"
+    },
+    {
+        "id": "3",
+        "img": "/classic.jpeg",
+        "title": "Indian Classical Music",
+        "description": "Embark on a journey of sacred soundscapes and timeless ragas"
+    },
+    {
+        "id": "4",
+        "img": "/classical.jpeg",
+        "title": "Classiwood Music",
+        "description": "Learn with us about a music"
+    },
+    {
+        "id": "5",
+        "img": "/Tabla.jpeg",
+        "title": "Tabla",
+        "description": "Master the beats of tradition and rhythm to tell timeless stories"
+    }
+]

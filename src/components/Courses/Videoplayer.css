@@ -1,0 +1,7 @@
+/* Video player styling */
+@media (max-width: 768px) {
+    .other {
+        height: 250px !important;
+        width: 350px !important;
+    }
+}

@@ -1,0 +1,41 @@
+.intern-container {
+  padding: 20px;
+}
+
+.intern-card-container {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(1, 1fr);
+  margin: 20px;
+}
+
+@media (min-width: 768px) {
+  .intern-card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .intern-card-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.intern-card {
+  text-align: center;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.intern-training-info > div {
+  text-align: center;
+  cursor: pointer;
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  transition: transform 0.3s ease;
+  border-radius: 10px;
+}
+
+.intern-training-info > div:hover {
+  transform: scale(1.05);
+}

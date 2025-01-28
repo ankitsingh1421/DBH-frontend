@@ -1,0 +1,13 @@
+@media (max-width: 1112px) {
+    .whatsapp-button-container {
+        margin-right: 0;
+    }
+
+    nav {
+        position: relative;
+    }
+
+    .singh {
+        margin-left: 20px;
+    }
+}

@@ -1,0 +1,39 @@
+.home-container {
+  position: relative;
+  /* Needed to position the pseudo-element */
+  z-index: 0;
+  /* Ensures child components stay on top */
+}
+
+.home-container::before {
+  content: "";
+  /* Required for pseudo-elements */
+  background-image: url('../Icons/hollow.jpg');
+  /* Path to the image */
+  background-attachment: fixed;
+  /* Fixed position while scrolling */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  z-index: -1;
+  /* Places the background behind all content */
+  opacity: o.1;
+  /* Optional: Adjust opacity to make the image subtle */
+  filter: brightness(0);
+  /* Adjust this value to make it dimmer (0 is completely dark, 1 is original brightness) */
+}
+
+/* Style for text content */
+.home-container .text-content {
+  color: white;
+  /* Bright color to increase contrast */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  /* Optional: Adds shadow to make the text more readable */
+}

@@ -1,0 +1,77 @@
+/* .home-container {
+    position: relative;
+    z-index: 0;
+    background-image: url('../Icons/hollow.jpg');
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: transparent;
+
+    height: 100vh;
+
+}
+
+.home-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../Icons/hollow.jpg');
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.5;
+    z-index: -1;
+
+}
+
+.bg-transparent {
+    background-color: transparent !important;
+}
+
+.text-white {
+    color: white;
+
+} */
+.home-container {
+    position: relative;
+    /* Needed to position the pseudo-element */
+    z-index: 0;
+    /* Ensures child components stay on top */
+    background-image: url('../Icons/hollow.jpg');
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: transparent;
+}
+
+.home-container::before {
+    content: "";
+    /* Required for pseudo-elements */
+    background-image: url('../Icons/hollow.jpg');
+    /* Path to the image */
+    background-attachment: fixed;
+    /* Fixed position while scrolling */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    z-index: -1;
+    /* Places the background behind all content */
+    opacity: 0.3;
+    /* Optional: Adjust opacity to make the image subtle */
+}

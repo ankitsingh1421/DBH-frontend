@@ -1,0 +1,54 @@
+Css of HomeBanner 
+
+.home-banner-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-banner-container .img img {
+  max-width: 100%;
+  height: auto;
+}
+
+.icon-left, .icon-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height:73px;
+  width:33px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  border-radius: 4px ;
+  color: black; 
+  cursor: pointer;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.icon-left {
+  left: 10px; 
+}
+
+.icon-right {
+  right: 10px;
+}
+.banner-bullets{
+  display: flex;
+  justify-content: center;
+  position :absolute;
+  bottom: 10px;
+  width: 100%;
+}
+
+.banner-bullet {
+  margin: 0 5px; 
+  font-size: 9px;
+  color: white; 
+}

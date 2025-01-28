@@ -1,0 +1,39 @@
+/* Responsive adjustments */
+.team-container {
+    scroll-snap-type: x mandatory;
+    /* Enable snapping for responsive view */
+    overflow-x: auto;
+    /* Allow horizontal scrolling for responsive */
+    display: flex;
+    /* Flex layout for mobile */
+    gap: 1.5rem;
+    padding: 1rem;
+    width: 100%;
+}
+
+/* For desktop, use grid */
+@media (min-width: 1024px) {
+    .team-container {
+        display: grid;
+        /* Switch to grid layout on desktop */
+        grid-template-columns: repeat(4, 1fr);
+        /* 4 cards in a row */
+        overflow-x: visible;
+        /* Remove horizontal scrolling on desktop */
+        gap: 2rem;
+        /* Adjust gap for desktop */
+    }
+}
+
+/* Hide scrollbars */
+.no-scrollbar {
+    -ms-overflow-style: none;
+    /* IE 10+ */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+    /* Safari and Chrome */
+}

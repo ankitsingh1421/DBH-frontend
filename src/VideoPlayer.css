@@ -1,0 +1,21 @@
+.video-title-price-cls{
+    width: 100%;
+    display:flex;
+    justify-content: space-between;
+}
+.res-title{
+    width: 60%;
+}
+
+@media (max-width: 768px) {
+    .video-title-price-cls{
+        flex-direction: column;
+    }
+    .res-title{
+        width: 100%;
+    }
+    .flex-class-card{
+        display: flex;
+        justify-content: center;
+    }
+}
