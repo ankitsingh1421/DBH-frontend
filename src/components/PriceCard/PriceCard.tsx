@@ -12,7 +12,7 @@ const PriceCard: React.FC<PriceCardProps> = ({ price, originalPrice, discount, c
         <div className="bg-blur p-6 rounded-lg shadow-md w-80   " style={{ marginLeft: '00px' }}>
             <div className="text-sm text-gray-200 uppercase mb-2">Price</div>
             <div className="flex items-center space-x-2">
-                <span className="text-3xl font-bold text-white">{currency}{price.toLocaleString()}</span>
+                <span className="text-3xl font-bold text-white">{currency} {price.toLocaleString()}</span>
                 {/* <span className="text-gray-400 line-through text-lg">{currency}{originalPrice}</span>
                 <span className="text-green-600 text-xl font-semibold">{discount} off</span> */}
             </div>
