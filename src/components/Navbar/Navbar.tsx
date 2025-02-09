@@ -124,12 +124,14 @@ export function Navbar() {
         className={`absolute top-0 left-0 w-full h-screen bg-navy-950/95 backdrop-blur-lg z-40 transform transition-transform duration-300 ${isMenuOpen ? "translate-x-0" : "-translate-x-full"
           } md:hidden`}
       >
+        <Link to='/'>
         <div className="flex items-center space-x-2 mt-3 ml-2">
           <img src="/logoNav.png" className="w-14 h-16" alt="Logo" />
           <span className="text-white text-xl font-bold">
             Decoding <br /> Bollywood Hits
           </span>
         </div>
+        </Link>
         <div style={{ marginLeft: "30px", marginTop: "20px" }}>
           <SignedIn>
             <div className="flex items-center space-x-4">

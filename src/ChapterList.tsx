@@ -147,6 +147,7 @@ import { ChevronDown, Lock, LockIcon, Play } from 'lucide-react';
 import { SignedOut, SignInButton, useUser } from '@clerk/clerk-react';
 import { ToastContainer, toast } from "react-toastify"; // Import toast functions
 import "react-toastify/dist/ReactToastify.css"; // Import the toast CSS
+import Notification from './components/notification-ui/Notification';
 interface Video {
     id: string;
     title: string;
@@ -165,6 +166,7 @@ interface ChapterListProps {
 
 const ChapterList: React.FC<ChapterListProps> = ({ chapters }) => {
     const [expandedChapter, setExpandedChapter] = useState<number | null>(null);
+    const [showNoti , setshowNoti] = useState(false);
     const navigate = useNavigate();
 
     const { user, isSignedIn } = useUser();
@@ -199,7 +201,24 @@ const ChapterList: React.FC<ChapterListProps> = ({ chapters }) => {
                                 }`}
                         />
                     </div>
-
+  {/* notification div */}
+  {showNoti && (
+  <div
+    className="fixed inset-0 flex items-end justify-center z-50"
+    onClick={() => setshowNoti(false)} // Close when clicking outside
+  >
+    <div
+      className="absolute bottom-10 rounded-md shadow-lg"
+      onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside
+    >
+      <Notification
+        type="info"
+        message="video start soon "
+        onClose={() => setshowNoti(false)}
+      />
+    </div>
+  </div>
+)}
                     {/* Show chapter videos if expanded */}
                     {expandedChapter === index && (
                         <div className="p-4 space-y-2">
@@ -217,7 +236,7 @@ const ChapterList: React.FC<ChapterListProps> = ({ chapters }) => {
                                             className="hidden lg:block text-purple-500 hover:text-purple-700"
                                             // onClick={() => handleWatchClick(video.url, chapter.id)}
                                             onClick={() => {
-                                                toast.info("videos start soon ");
+                                                setshowNoti(true)
                                             }}
                                         >
                                             Watch
@@ -249,6 +268,7 @@ const ChapterList: React.FC<ChapterListProps> = ({ chapters }) => {
             ))}
 
         </div>
+        
     );
 };
 

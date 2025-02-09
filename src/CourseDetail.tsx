@@ -22,6 +22,8 @@ import PaymentFailed from './components/Payment/PaymentFailed';
 import PaymentSuccess from './components/Payment/PaymentSuccess';
 import { use } from 'framer-motion/client';
 import Payment from './components/Payment/Payment';
+import { CheckCircle } from 'lucide-react';
+import Notification from './components/notification-ui/Notification';
 
 interface CourseDetailProps {
     onWatchClick: (videoUrl: string) => void;
@@ -35,9 +37,16 @@ const CourseDetail: React.FC<CourseDetailProps> = ({ onWatchClick }) => {
     const [showPaymentModal, setShowPaymentModal] = useState(false);
     const [showPaymentPage, setShowPaymentPage] = useState<'success' | 'failed' | null>(null); // New state for payment status
     const [setBut, setSetBut] = useState(false);
+    const [showNoti , setshowNoti] = useState(false);
     const navigate = useNavigate();
     const { user, isSignedIn } = useUser();
 
+    useEffect(() => {
+        if (showNoti) {
+          const timer = setTimeout(() => setshowNoti(false), 3000); // Auto-close after 3 sec
+          return () => clearTimeout(timer); // Cleanup on unmount
+        }
+      }, [showNoti]);
     useEffect(() => {
         const courseData = courses.find((course: any) => course.id === id);
         setCourse(courseData || null);
@@ -54,6 +63,7 @@ const CourseDetail: React.FC<CourseDetailProps> = ({ onWatchClick }) => {
         );
     }
 
+    
     // Navigate to CoursePlayer
     const handleWatchClick = (videoUrl: string, chapterId: string) => {
         navigate(`/course/play/${id}`);
@@ -62,7 +72,8 @@ const CourseDetail: React.FC<CourseDetailProps> = ({ onWatchClick }) => {
     // Handle Enroll Course Button Click
     const handleEnrollClick = () => {
         // setShowPaymentModal(true);
-        toast.info("working in process")
+        // toast.info("working in process")
+         setshowNoti(true);
          // Show the payment modal when the user clicks "Enroll"
       };
       const handlePaymentDecision = (decision: 'yes' | 'no') => {
@@ -147,6 +158,26 @@ const CourseDetail: React.FC<CourseDetailProps> = ({ onWatchClick }) => {
                             </SignedOut>
                         </button>
                     )}
+
+
+{showNoti && (
+  <div
+    className="fixed inset-0 bg-black/30 flex items-end justify-center z-50"
+    onClick={() => setshowNoti(false)} // Close when clicking outside
+  >
+    <div
+      className="absolute bottom-10 rounded-md shadow-lg"
+      onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside
+    >
+      <Notification
+        type="info"
+        message="work in process"
+        onClose={() => setshowNoti(false)}
+      />
+    </div>
+  </div>
+)}
+
 
 <button
   className="bg-gray-700 text-white py-3 px-6 rounded-lg shadow-md hover:bg-gray-800 focus:outline-none focus:ring-4 focus:ring-gray-500 font-medium transition"

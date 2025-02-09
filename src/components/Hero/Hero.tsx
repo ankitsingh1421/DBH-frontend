@@ -1,3 +1,4 @@
+import Notification from '../notification-ui/Notification';
 import { CircleAnimation } from './CircleAnimation';
 import { Logo } from './Logo';
 import { useState, useEffect } from 'react';
@@ -6,7 +7,7 @@ export function Hero() {
   const [isFormOpen, setFormOpen] = useState(false);
   const [isNavOpen, setNavOpen] = useState(false); // New state for the burger menu
   const [isFormSubmitted, setFormSubmitted] = useState(false); // Track form submission
-
+  const [showNoti , setshowNoti] = useState(false)
   // Automatically open form after 3 seconds if not submitted
   useEffect(() => {
     if (!isFormSubmitted) {
@@ -26,6 +27,7 @@ export function Hero() {
       setFormOpen(false);
     }
   };
+
 
   // Form state
   const [formData, setFormData] = useState({
@@ -66,6 +68,8 @@ export function Hero() {
       });
 
       setStatus("Form submitted successfully!");
+  setshowNoti(true);
+
       setShowSuccess(true);
 
       // Reset form data, close form, and mark as submitted
@@ -264,9 +268,15 @@ export function Hero() {
                   Submit
                 </button>
               </form>
-              {status && <p className="mt-3 text-sm text-gray-700">{status}</p>}
+              {status && <p className="mt-3 text-sm text-gray-700">{status}<Notification
+      type="success" 
+      message="sales team contact you soon !!" 
+      onClose={() => setshowNoti(false)} 
+      /></p>}
+             
             </div>
           </div>
+          
         </div>
       )}
     </div>

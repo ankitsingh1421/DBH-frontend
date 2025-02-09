@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import './welcome.css'
 export function Welcome() {
   return (
-    <div className="relative min-h-screen b overflow-hidden flex items-center">
+    <div className="relative min-h-screen b overflow-hidden flex items-center text-2xl">
       {/* Gradient Background */}
   {/* Gradient Background */}
   {/* <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-pink-900/20" /> */}
