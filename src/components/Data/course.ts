@@ -9,17 +9,18 @@ export const courses: Course[] = [
         image: 'https://images.unsplash.com/photo-1593720219276-0b1eacd0aef4?auto=format&fit=crop&w=800&q=80',
         demoVideo: '/comingsoon.jpeg',
         price: {
-            amount: 999,
-            originalAmount: 1999,
-            discount: "50%",
+            amount: 18000,
+            // originalAmount: 1999,
+            // discount: "50%",
             currency: "INR",
         },
         highlights: [
-            'Instrument Fundamentals: Learn the structure and functions of a synthesizer.',
-            'Bollywood Styling: Understand the unique textures and sounds of Bollywood music.',
-            'Creative Compositions: Develop skills to create captivating tunes and background scores.',
-            'Live Performance Training: Gain confidence to perform on stage.',
-            'Recording Techniques: Learn studio methods to produce high-quality tracks.'
+            'Comprehensive Training - From beginner to advanced techniques',
+            'Experienced Instructors - Learn from skilled professionals',
+            'Practical Sessions – Hands-on experience with real-time guidance',
+            'Music Theory & Composition – Understand scales, chords, and melodies',
+            'Performance Opportunities – Showcase your skills in live sessions',
+            'Certificate after completion of the program.'
         ],
         chapters: [
             {
@@ -179,17 +180,18 @@ export const courses: Course[] = [
         image: 'https://images.unsplash.com/photo-1593696140820-062e5f3341a3?auto=format&fit=crop&w=800&q=80',
         demoVideo: '/comingsoon.jpeg',
         price: {
-            amount: 999,
-            originalAmount: 1999,
-            discount: "50%",
+            amount: 24000,
+            // originalAmount: 1999,
+            // discount: "50%",
             currency: "INR",
         },
         highlights: [
-            'Essential Guitar Techniques: Master chords, scales, and strumming patterns.',
-            'Bollywood Styles: Learn to play famous Bollywood songs across genres.',
-            'Improvisation Skills: Develop the ability to create unique riffs and solos.',
-            'Performance Training: Build confidence to perform live.',
-            'Music Theory Simplified: Understand how music works to enhance your playing.'
+            'Comprehensive Training – Learn from basics to advanced techniques',
+            'Chords, Scales & Fingerstyle – Develop a strong foundation in playing.',
+            'Strumming & Rhythm Patterns – Master different playing styles.',
+            ' Song Performance & Composition – Play your favorite songs and create your own music.',
+            'Stage Performance Techniques – Gain confidence for live shows.',
+            'Certification – Get a recognized certificate upon completion'
         ],
         chapters: [
             {
@@ -371,8 +373,8 @@ export const courses: Course[] = [
         demoVideo: '/comingsoon.jpeg',
         price: {
             amount: 999,
-            originalAmount: 1999,
-            discount: "50%",
+            // originalAmount: 1999,
+            // discount: "50%",
             currency: "INR",
         },
         highlights: [
@@ -601,19 +603,17 @@ export const courses: Course[] = [
         image: 'https://images.unsplash.com/photo-1593696140820-062e5f3341a3?auto=format&fit=crop&w=800&q=80',
         demoVideo: '/comingsoon.jpeg',
         price: {
-            amount: 999,
-            originalAmount: 1999,
-            discount: "50%",
+            amount: 10000,
+            // originalAmount: 1999,
+            // discount: "50%",
             currency: "INR",
         },
         highlights: [
-            'Comprehensive Learning: A unique fusion of two rich musical worlds — Indian Classical and Bollywood.',
-            'Interactive Modules: Practical sessions for vocal and instrumental training',
-            'Creative Integration: Lessons on blending classical ragas into Bollywood compositions',
-            'Performance-Based Approach: Focus on stage presence and live performance skills',
-            'Expert Guidance: Learn from seasoned professionals in Indian Classical and Bollywood music',
-            'Cultural Appreciation: Deepen your understanding of Indias rich musical heritage',
-            'Flexible for All Levels: Tailored content for beginners, intermediates, and advanced learners'
+            'A unique fusion of Indian Classical Music & Bollywood Music to refine your musical artistry!.',
+            'Blend of Tradition & Modernity – Learn the richness of classical music with the vibrancy of Bollywood',
+            ' Raga-Based Training – Understand classical ragas and their Bollywood adaptations',
+            'Voice Modulation & Expression – Enhance your singing dynamics',
+            'Taal & Rhythm Mastery – Develop rhythmic precision with classical & Bollywood beats',
         ],
         chapters: [
             {
@@ -834,19 +834,19 @@ export const courses: Course[] = [
         image: 'https://images.unsplash.com/photo-1593720219276-0b1eacd0aef4?auto=format&fit=crop&w=800&q=80',
         demoVideo: '/comingsoon.jpeg',
         price: {
-            amount: 999,
-            originalAmount: 1999,
-            discount: "50%",
+            amount: 7500,
+            // originalAmount: 1999,
+            // discount: "50%",
             currency: "INR",
         },
         highlights: [
-            'In-Depth Tabla Training: Detailed lessons on technique, rhythm, and improvisation.',
-            'Bol Patterns & Rhythms: Explore the fundamental rhythm structures of tabla.',
-            'Bollywood Fusion: Discover how tabla integrates with Bollywood compositions.',
-            'Taal Mastery: Understand classical taals and their application in modern music.',
-            'Live Demonstrations: Sessions with seasoned tabla maestros.',
-            'Interactive Practice: Play along with Bollywood tracks and fellow students.',
-            'Music Analysis: Breakdown of iconic Bollywood tracks featuring tabla.'
+            'Comprehensive Training – From basic to advanced tabla techniques.',
+            'Expert Instructors – Learn from experienced tabla maestros.',
+            ' Practical Sessions – Hands-on learning with personalized guidance.',
+            'Taal & Rhythm Mastery – In-depth understanding of various taals.',
+            'Certification – Receive a certificate from both our institute & the university.',
+            'Flexible Learning – Online & offline classes available.',
+            'Enroll now and start your musical journey!.'
         ],
         chapters: [
             {

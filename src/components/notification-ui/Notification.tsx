@@ -15,7 +15,7 @@ const Notification = ({ type, message, onClose }) => {
       "
     >
       <span className="mr-3">{icons[type]}</span>
-      <p className="flex-1 text-sm font-medium">{message}</p>   
+      <p className="flex-1 text-sm font-medium text-black">{message}</p>   
       <button onClick={onClose} className="ml-3">
         <X className="w-4 h-4 text-gray-500 hover:text-gray-700 dark:hover:text-gray-300" />
       </button>

@@ -14,8 +14,19 @@ const Footer: React.FC = () => {
       <div className="footer-container">
         <div className="footer-section">
           <h4>Contact Us</h4>
-          <p>Email: info@decodingbollywoodhits.in</p>
-          <p>Phone: 9836311375</p>
+          <p>
+    Email ID: 
+    <a href="mailto:info@decodingbollywoodhits.in" className="text-white hover:underline">
+       info@decodingbollywoodhits.in
+    </a>
+  </p>
+  <p>
+    Contact Number :  
+    <a href="tel:9836311375" className="text-white hover:underline">
+       9836311375
+    </a>
+  </p>
+
         </div>
         <div className="footer-section">
           <h4>Follow Us</h4>

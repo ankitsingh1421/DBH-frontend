@@ -18,13 +18,13 @@ const About = () => {
   const teamMembers = [
     { 
       name: 'Sanskar Saswat', 
-      role: 'CEO,Co-Founder',
+      role: 'CEO, Co-Founder',
       image: 'sanskar.jpeg',
       quote: 'At DBH, we embarked on this journey with a shared vision—to innovate, inspire, and make a meaningful impact. As co-founders, we believe that true success lies not just in growth but in the value we create for our customers, employees, and the community.'
     },
     { 
       name: 'Roopkatha Roy', 
-      role: 'COO,Co-Founder',
+      role: 'COO, Co-Founder',
       image: 'roop.jpeg',
       quote: 'Every step we take is driven by our core values—integrity, perseverance, and customer-centricity. We are dedicated to fostering an environment that encourages learning, collaboration, and continuous improvement. Our team is the heart of our success, and together, we aim to create something truly transformative.'
     },
@@ -77,9 +77,9 @@ const About = () => {
       ) : (
         <div id="about" className="py-20 ">
           <div className="text-center mb-10">
-            <h3 data-aos="fade-up" className="text-4xl font-bold text-white">
-              <span className="text-purple-500">From</span> Our
-              <span className="text-purple-500 pl-3">Founders' Desk</span>
+          <h3 data-aos="fade-up" className="text-4xl font-bold text-white">
+              <span className="text-purple-500">From Our </span> Founders' 
+              <span className="text-purple-500 pl-3">Desk</span>
             </h3>
           </div>
 

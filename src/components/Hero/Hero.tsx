@@ -251,14 +251,10 @@ export function Hero() {
                     <option value="">Choose</option>
                     <option>Synthesizer</option>
                     <option>Tabla</option>
-                    <option>Harmonium</option>
-                    <option>Cajon</option>
-                    <option>Darbuka</option>
-                    <option>Guitar (Optional)</option>
+                    <option>Guitar </option>
+                    <option>Base Guitar</option>
+                    <option>Classiwood Music</option>
                     <option>Indian Classical Music</option>
-                    <option>Bollywood Music</option>
-                    <option>Vocal Grooming</option>
-                    <option>Music Production Program</option>
                   </select>
                 </div>
                 <button
