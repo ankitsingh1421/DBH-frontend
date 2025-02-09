@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './About.css';
+import { Quote } from 'lucide-react';
+import { FaQuoteLeft } from 'react-icons/fa';
 
 const About = () => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth <= 800);
@@ -34,19 +36,20 @@ const About = () => {
         <div id="about" className="py-20 ">
           <div className="text-center mb-16">
             <h3 data-aos="fade-up" className="text-4xl font-bold text-white">
-              <span className="text-purple-500">From</span> Our
-              <span className="text-purple-500 pl-3">Founders' Desk</span>
+              <span className="text-purple-500">From Our </span> Founders' 
+              <span className="text-purple-500 pl-3">Desk</span>
             </h3>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-12 px-8 max-w-7xl mx-auto ">
             {teamMembers.map((member, idx) => (
               <div
-                key={idx}
-                data-aos="fade-up"
-                className=" rounded-2xl p-8 shadow-xl relative bg-darkBlue"
-              >
-                <div className="flex flex-col md:flex-row items-center gap-6 ">
+              key={idx}
+              data-aos="fade-up"
+              className="rounded-2xl p-8 shadow-xl relative"
+              style={{ backgroundColor: 'rgba(14, 14, 78, 0.5)' }} // Adjusts the transparency to 50%
+            >
+                <div className="flex flex-col md:flex-row items-center gap-6 transform transition-transform hover:scale-105">
                   {/* <div className="flex-shrink-0">
                     <img
                       src={member.image}
@@ -55,11 +58,14 @@ const About = () => {
                     />
                   </div> */}
                   <div className="flex-1">
+                  <FaQuoteLeft className="w-6 h-6 mr-2" />
                     <p className="text-white text-lg mb-6 italic">
                       {member.quote}
                     </p>
                     <div className="text-right border-t pt-4 mt-4 w-full" >
-                      <h4 className="text-2xl font-bold text-gray-900">{member.name}</h4>
+                    <h4 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500">
+  {member.name}
+</h4>
                       <p className="text-purple-600 font-medium">{member.role}</p>
                     </div>
                   </div>
