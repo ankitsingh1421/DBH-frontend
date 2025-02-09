@@ -92,18 +92,20 @@ const About = () => {
                 key={idx}
                 data-aos="fade-up"
                 className="min-w-[300px] bg-white rounded-2xl p-6 shadow-xl bg-darkBlue"
+                style={{ backgroundColor: 'rgba(14, 14, 78, 0.5)' }}
               >
                 <div className="flex flex-col items-center">
-                  <img
+                  {/* <img
                     src={member.image}
                     alt={member.name}
                     className="rounded-full w-24 h-24 mb-4 border-4 border-purple-500"
-                  />
+                  /> */}
+                  
                   <p className="text-white text-base mb-6 italic text-center">
-                    {member.quote}
+                   <FaQuoteLeft style={{color:"black"}}/> {member.quote}
                   </p>
                   <div className="text-center border-t pt-4 mt-4 w-full">
-                    <h4 className="text-xl font-bold text-gray-900">{member.name}</h4>
+                    <h4 className="text-xl font-bold text-gray-900 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500">{member.name}</h4>
                     <p className="text-purple-600 font-medium">{member.role}</p>
                   </div>
                 </div>
