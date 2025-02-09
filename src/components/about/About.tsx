@@ -20,13 +20,13 @@ const About = () => {
       name: 'Sanskar Saswat', 
       role: 'Co-Founder',
       image: 'sanskar.jpeg',
-      quote: 'Building a vision that transforms ideas into reality. Every day brings new opportunities vision that transforms ideas into reality. Every day brings new opportunities  vision that transforms ideas into reality. Every day brings new opportunities to innovate and grow together.'
+      quote: 'At DBH, we embarked on this journey with a shared vision—to innovate, inspire, and make a meaningful impact. As co-founders, we believe that true success lies not just in growth but in the value we create for our customers, employees, and the community.'
     },
     { 
       name: 'Roopkatha Roy', 
       role: 'Co-Founder',
       image: 'roop.jpeg',
-      quote: 'Dedicated to creating an inclusive platform where Building a vision that transforms ideas into reality. Every day brings new opportunities Building a vision that transforms ideas into reality. Every day brings new opportunities creativity meets opportunity. Our journey is just beginning.'
+      quote: 'Every step we take is driven by our core values—integrity, perseverance, and customer-centricity. We are dedicated to fostering an environment that encourages learning, collaboration, and continuous improvement. Our team is the heart of our success, and together, we aim to create something truly transformative.'
     },
   ];
 
