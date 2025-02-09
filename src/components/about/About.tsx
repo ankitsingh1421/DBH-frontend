@@ -18,13 +18,13 @@ const About = () => {
   const teamMembers = [
     { 
       name: 'Sanskar Saswat', 
-      role: 'Co-Founder',
+      role: 'CEO,Co-Founder',
       image: 'sanskar.jpeg',
       quote: 'At DBH, we embarked on this journey with a shared vision—to innovate, inspire, and make a meaningful impact. As co-founders, we believe that true success lies not just in growth but in the value we create for our customers, employees, and the community.'
     },
     { 
       name: 'Roopkatha Roy', 
-      role: 'Co-Founder',
+      role: 'COO,Co-Founder',
       image: 'roop.jpeg',
       quote: 'Every step we take is driven by our core values—integrity, perseverance, and customer-centricity. We are dedicated to fostering an environment that encourages learning, collaboration, and continuous improvement. Our team is the heart of our success, and together, we aim to create something truly transformative.'
     },
