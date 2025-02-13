@@ -10,7 +10,7 @@ const Notification = ({ type, message, onClose }) => {
   };
 
    return (
-    <div className="flex items-center w-85 p-4 bg-white dark:bg-gray-900 shadow-lg rounded-lg  
+    <div className="flex items-center w-85 p-4 bg-white  shadow-lg rounded-lg  
       transition-all duration-300 ease-in-out 
       "
     >
