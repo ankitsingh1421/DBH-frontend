@@ -17,6 +17,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Home } from './pages/Home';
 import CourseDetail from './CourseDetail'; // Import your course details component
 import ChapterPlayer from './ChapterPlayer';
+import Mycourse from './pages/Mycourse';
+
 
 
 function App() {
@@ -32,6 +34,10 @@ function App() {
 
           {/* New route for playing video */}
           <Route path="/course/play/:id" element={<ChapterPlayer />} />
+
+          
+          <Route path="/my-course" element={<Mycourse />} />
+          <Route path="/saved-course" element={<Mycourse />} />
         </Routes>
       </div>
     </Router>
