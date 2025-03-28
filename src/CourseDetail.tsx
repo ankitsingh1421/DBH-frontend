@@ -17,13 +17,12 @@ import "react-toastify/dist/ReactToastify.css"; // Import the toast CSS
 import api from '../src/API' // Adjust the import path to where your api instance is defined
 import axios from 'axios';
 
+
 // Import Payment Failed and Payment Success components
 import PaymentFailed from './components/Payment/PaymentFailed';
 import PaymentSuccess from './components/Payment/PaymentSuccess';
 import { use } from 'framer-motion/client';
 import Payment from './components/Payment/Payment';
-import { CheckCircle } from 'lucide-react';
-import Notification from './components/notification-ui/Notification';
 
 interface CourseDetailProps {
     onWatchClick: (videoUrl: string) => void;
@@ -37,16 +36,90 @@ const CourseDetail: React.FC<CourseDetailProps> = ({ onWatchClick }) => {
     const [showPaymentModal, setShowPaymentModal] = useState(false);
     const [showPaymentPage, setShowPaymentPage] = useState<'success' | 'failed' | null>(null); // New state for payment status
     const [setBut, setSetBut] = useState(false);
-    const [showNoti , setshowNoti] = useState(false);
     const navigate = useNavigate();
     const { user, isSignedIn } = useUser();
 
-    useEffect(() => {
-        if (showNoti) {
-          const timer = setTimeout(() => setshowNoti(false), 3000); // Auto-close after 3 sec
-          return () => clearTimeout(timer); // Cleanup on unmount
+
+    const course_Id = id;
+    const user_Id = user?.id
+
+
+    const createPayment = async (user_Id, course_Id) => {
+        try {
+            const response = await fetch("http://localhost:5000/course/purchase", {  // Replace with your actual backend URL
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    user_Id: user_Id,
+                    course_Id: course_Id,
+                }),
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                throw new Error(data.message || "Payment failed");
+            }
+
+            setShowPaymentPage('success');
+            setBuy(true); // Enable the Resume Course button
+
+            setTimeout(() => {
+                setShowPaymentPage(null); // Close the payment page after 3 seconds
+            }, 3000);
+
+        } catch (error) {
+            console.error("Payment Error:", error);
         }
-      }, [showNoti]);
+    };
+
+
+
+
+    const fetchPurchaseInfo = async () => {
+        try {
+            const response = await fetch(    `http://localhost:5000/course/purchase/info/${user_Id}/${course_Id}`
+                , {  // Replace with your actual backend URL
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                
+            });
+
+            const data = await response.json();
+            console.log("Payment finded",data.payment.Payment)
+
+            const paymentStatus = data.payment.Payment;
+            if(paymentStatus){
+                setBuy(true)
+            }else{
+                setBuy(false);
+            }
+
+            if (!response.ok) {
+                throw new Error(data.message || "Payment not found");
+                setBuy(false)
+            }
+
+
+        } catch (error) {
+            console.error("Payment done catch error", error);
+            setBuy(false)
+        }
+    };
+
+
+    // Call the function inside useEffect
+    useEffect(() => {
+        fetchPurchaseInfo()
+    }, []);
+
+
+
+
     useEffect(() => {
         const courseData = courses.find((course: any) => course.id === id);
         setCourse(courseData || null);
@@ -63,7 +136,6 @@ const CourseDetail: React.FC<CourseDetailProps> = ({ onWatchClick }) => {
         );
     }
 
-    
     // Navigate to CoursePlayer
     const handleWatchClick = (videoUrl: string, chapterId: string) => {
         navigate(`/course/play/${id}`);
@@ -71,27 +143,23 @@ const CourseDetail: React.FC<CourseDetailProps> = ({ onWatchClick }) => {
 
     // Handle Enroll Course Button Click
     const handleEnrollClick = () => {
-        // setShowPaymentModal(true);
+        setShowPaymentModal(true);
         // toast.info("working in process")
-         setshowNoti(true);
-         // Show the payment modal when the user clicks "Enroll"
-      };
-      const handlePaymentDecision = (decision: 'yes' | 'no') => {
+        // Show the payment modal when the user clicks "Enroll"
+    };
+    const handlePaymentDecision = (decision: 'yes' | 'no') => {
         setShowPaymentModal(false); // Close the payment modal
-    
+
         if (decision === 'yes') {
-          setShowPaymentPage('success'); // Show success page
-          setBuy(true); // Enable the Resume Course button
-          setTimeout(() => {
-            setShowPaymentPage(null); // Close the payment page after 3 seconds
-          }, 3000);
+            createPayment(user_Id, course_Id); // Show success page
+           
         } else {
-          setShowPaymentPage('failed'); // Show failure page
-          setTimeout(() => {
-            setShowPaymentPage(null); // Close the payment page after 3 seconds
-          }, 3000);
+            setShowPaymentPage('failed'); // Show failure page
+            setTimeout(() => {
+                setShowPaymentPage(null); // Close the payment page after 3 seconds
+            }, 3000);
         }
-      };
+    };
 
     // Handle redirect to other course details with loading state
     const handleCourseRedirect = (courseId: string) => {
@@ -103,7 +171,7 @@ const CourseDetail: React.FC<CourseDetailProps> = ({ onWatchClick }) => {
         }, 1000); // 1 second delay for loading
     };
 
-    
+
 
     return (
         <div className="home-container min-h-screen">
@@ -132,13 +200,12 @@ const CourseDetail: React.FC<CourseDetailProps> = ({ onWatchClick }) => {
                     {isSignedIn ? (
                         buy ? (
                             <button
-                            className={`${
-                              buy ? 'bg-blue-600' : 'bg-green-600'
-                            } text-white py-3 px-6 rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium transition`}
-                            onClick={buy ? () => handleWatchClick(course.chapters[0].videos[0].url, course.chapters[0].id) : handleEnrollClick}
-                          >
-                            {buy ? 'Resume Course' : 'Enroll Course'}
-                          </button>
+                                className={`${buy ? 'bg-blue-600' : 'bg-green-600'
+                                    } text-white py-3 px-6 rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium transition`}
+                                onClick={buy ? () => handleWatchClick(course.chapters[0].videos[0].url, course.chapters[0].id) : handleEnrollClick}
+                            >
+                                {buy ? 'Resume Course' : 'Enroll Course'}
+                            </button>
                         ) : (
                             <button
                                 className="bg-green-600 text-white py-3 px-6 rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium transition"
@@ -159,39 +226,19 @@ const CourseDetail: React.FC<CourseDetailProps> = ({ onWatchClick }) => {
                         </button>
                     )}
 
-
-{showNoti && (
-  <div
-    className="fixed inset-0 bg-black/30 flex items-end justify-center z-50"
-    onClick={() => setshowNoti(false)} // Close when clicking outside
-  >
-    <div
-      className="absolute bottom-10 rounded-md shadow-lg"
-      onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside
-    >
-      <Notification
-        type="info"
-        message="work in process"
-        onClose={() => setshowNoti(false)}
-      />
-    </div>
-  </div>
-)}
-
-
-<button
-  className="bg-gray-700 text-white py-3 px-6 rounded-lg shadow-md hover:bg-gray-800 focus:outline-none focus:ring-4 focus:ring-gray-500 font-medium transition"
->
-  Watch Later
-</button>
+                    <button
+                        className="bg-gray-700 text-white py-3 px-6 rounded-lg shadow-md hover:bg-gray-800 focus:outline-none focus:ring-4 focus:ring-gray-500 font-medium transition"
+                    >
+                        Watch Later
+                    </button>
                 </div>
             </div>
-    
-{showPaymentModal && <Payment handlePaymentDecision={handlePaymentDecision} />}
 
-{/* Show Payment Page (Success or Failed) */}
-{showPaymentPage === 'failed' && <PaymentFailed closeModal={() => setShowPaymentPage(null)} />}
-{showPaymentPage === 'success' && <PaymentSuccess closeModal={() => setShowPaymentPage(null)} />}
+            {showPaymentModal && <Payment handlePaymentDecision={handlePaymentDecision} />}
+
+            {/* Show Payment Page (Success or Failed) */}
+            {showPaymentPage === 'failed' && <PaymentFailed closeModal={() => setShowPaymentPage(null)} />}
+            {showPaymentPage === 'success' && <PaymentSuccess closeModal={() => setShowPaymentPage(null)} />}
 
 
             {/* Course Info Section */}
