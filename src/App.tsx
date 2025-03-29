@@ -1,22 +1,8 @@
-// import { Home } from './pages/Home';
-
-// function App() {
-//   return (
-
-//       <div className="content bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-pink-900/20">
-//         <Home />
-//     </div>
-//   );
-// }
-
-// export default App;
-
-import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Home } from './pages/Home';
 import CourseDetail from './CourseDetail'; // Import your course details component
 import ChapterPlayer from './ChapterPlayer';
-import Mycourse from './pages/Mycourse';
+import Waiting from './pages/Waiting';
 
 
 
@@ -35,8 +21,8 @@ function App() {
           <Route path="/course/play/:id" element={<ChapterPlayer />} />
 
           
-          <Route path="/my-course" element={<Mycourse />} />
-          <Route path="/saved-course" element={<Mycourse />} />
+          <Route path="/my-course" element={< Waiting/>} />
+          <Route path="/saved-course" element={<Waiting />} />
         </Routes>
       </div>
     </Router>

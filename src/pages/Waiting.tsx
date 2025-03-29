@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Home } from 'lucide-react';
 import './mycourse.css';
 
-function Mycourse() {
+function Waiting() {
   const navigate = useNavigate();
   const [progress, setProgress] = useState(0);
 
@@ -70,4 +70,4 @@ function Mycourse() {
   );
 }
 
-export default Mycourse;
+export default Waiting;
