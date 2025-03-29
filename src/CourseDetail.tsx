@@ -46,7 +46,7 @@ const CourseDetail: React.FC<CourseDetailProps> = ({ onWatchClick }) => {
 
     const createPayment = async (user_Id, course_Id) => {
         try {
-            const response = await fetch("http://localhost:5000/course/purchase", {  // Replace with your actual backend URL
+            const response = await fetch("https://dbh-web-service.onrender.com/course/purchase", {  // Replace with your actual backend URL
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -80,7 +80,7 @@ const CourseDetail: React.FC<CourseDetailProps> = ({ onWatchClick }) => {
 
     const fetchPurchaseInfo = async () => {
         try {
-            const response = await fetch(    `http://localhost:5000/course/purchase/info/${user_Id}/${course_Id}`
+            const response = await fetch(    `https://dbh-web-service.onrender.com/course/purchase/info/${user_Id}/${course_Id}`
                 , {  // Replace with your actual backend URL
                 method: "GET",
                 headers: {
