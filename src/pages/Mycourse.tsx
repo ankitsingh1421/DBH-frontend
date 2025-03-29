@@ -1,7 +1,7 @@
-import  { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Home } from 'lucide-react';
-import './mycourse.css'
+import './mycourse.css';
 
 function Mycourse() {
   const navigate = useNavigate();
@@ -25,23 +25,23 @@ function Mycourse() {
         <a 
           href="#" 
           onClick={() => navigate('/')} 
-          className="text-blue-300 hover:text-blue-400 transition-colors duration-200 uppercase text-sm tracking-wider"
+          className="text-blue-300 hover:text-blue-400 transition-colors duration-200 uppercase text-xs md:text-sm tracking-wider"
         >
           HOME
         </a>
       </div>
 
-      <div className="text-center max-w-2xl mx-auto px-4">
+      <div className="text-center w-full max-w-3xl px-6">
         {/* Main Text */}
-        <h1 className="text-white text-6xl font-bold mb-4 tracking-wider drop-shadow-2xl">
-         Page is  UNDER
+        <h1 className="text-white text-4xl sm:text-5xl md:text-6xl font-bold mb-4 tracking-wider drop-shadow-2xl">
+          Page is UNDER
         </h1>
-        <h1 className="text-white text-6xl font-bold mb-12 tracking-wider drop-shadow-2xl">
+        <h1 className="text-white text-4xl sm:text-5xl md:text-6xl font-bold mb-12 tracking-wider drop-shadow-2xl">
           CONSTRUCTION
         </h1>
 
         {/* Subtitle */}
-        <p className="text-gray-400 text-sm uppercase tracking-widest mb-8">
+        <p className="text-gray-400 text-xs sm:text-sm uppercase tracking-widest mb-8">
           Site Nearly Ready
         </p>
 
@@ -54,15 +54,15 @@ function Mycourse() {
         </div>
 
         {/* Back to Home Button */}
-      
-          <button className='button'
-           onClick={() => navigate('/')}
-          >
-                     <Home size={18} /> Back to home page 
-          </button>
+        <button className="button mx-auto flex items-center justify-center gap-2"
+          onClick={() => navigate('/')}
+        >
+          <Home size={18} /> Back to Home Page
+        </button>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex justify-between w-full max-w-md px-4">
+      {/* Percentage Labels */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex justify-between w-full max-w-md px-4 text-xs sm:text-sm">
         <span className="text-gray-500">0%</span>
         <span className="text-gray-500">100%</span>
       </div>

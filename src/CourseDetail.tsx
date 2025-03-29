@@ -35,7 +35,6 @@ const CourseDetail: React.FC<CourseDetailProps> = ({ onWatchClick }) => {
     const [buy, setBuy] = useState(false);
     const [showPaymentModal, setShowPaymentModal] = useState(false);
     const [showPaymentPage, setShowPaymentPage] = useState<'success' | 'failed' | null>(null); // New state for payment status
-    const [setBut, setSetBut] = useState(false);
     const navigate = useNavigate();
     const { user, isSignedIn } = useUser();
 
@@ -255,6 +254,7 @@ const CourseDetail: React.FC<CourseDetailProps> = ({ onWatchClick }) => {
                         activeChapter={0}
                         onChapterClick={() => { }}
                         onVideoClick={onWatchClick}
+                        buy = {buy}
                     />
                 </div>
             </div>
