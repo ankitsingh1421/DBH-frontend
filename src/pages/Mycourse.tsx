@@ -62,7 +62,6 @@ function Mycourse() {
           </button>
       </div>
 
-      {/* Loading Percentage */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex justify-between w-full max-w-md px-4">
         <span className="text-gray-500">0%</span>
         <span className="text-gray-500">100%</span>
