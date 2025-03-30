@@ -24,10 +24,10 @@ function App() {
           <Route path="/course/play/:id" element={<ChapterPlayer />} />
 
           
-          <Route path="/my-course" element={< PageError/>} />
-          <Route path="/saved-course" element={<PageError />} />
           <Route path="/blog/:id" element={<BlogPost />} />
           <Route path="/blog" element={<BlogList />} />
+
+          <Route path="*" element={<PageError />} />
         </Routes>
       </div>
     </Router>
