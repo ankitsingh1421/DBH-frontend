@@ -3,6 +3,9 @@ import { Home } from './pages/Home';
 import CourseDetail from './CourseDetail'; // Import your course details component
 import ChapterPlayer from './ChapterPlayer';
 import Waiting from './pages/Waiting';
+import BlogList from './pages/BlogList';
+import BlogPost from './pages/BlogPost';
+import PageError from './pages/PageError';
 
 
 
@@ -21,8 +24,10 @@ function App() {
           <Route path="/course/play/:id" element={<ChapterPlayer />} />
 
           
-          <Route path="/my-course" element={< Waiting/>} />
-          <Route path="/saved-course" element={<Waiting />} />
+          <Route path="/my-course" element={< PageError/>} />
+          <Route path="/saved-course" element={<PageError />} />
+          <Route path="/blog/:id" element={<BlogPost />} />
+          <Route path="/blog" element={<BlogList />} />
         </Routes>
       </div>
     </Router>

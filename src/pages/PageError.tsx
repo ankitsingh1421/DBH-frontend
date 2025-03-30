@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Home } from 'lucide-react';
-import './mycourse.css';
-
-function Waiting() {
+import './pageerror.css'
+function PageError() {
   const navigate = useNavigate();
   const [progress, setProgress] = useState(0);
 
@@ -70,4 +69,4 @@ function Waiting() {
   );
 }
 
-export default Waiting;
+export default PageError;

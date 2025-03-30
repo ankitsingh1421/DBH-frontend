@@ -36,15 +36,18 @@ export function Navbar() {
           </Link>
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <ScrollLink
-              to="home"
-              smooth={true}
-              duration={500}
-              className="text-white cursor-pointer hover:text-purple-400"
-            >
-              Home
-            </ScrollLink>
-            <ScrollLink
+          {!location.pathname.startsWith("/blog") ? (
+  <ScrollLink
+    to="home"
+    smooth={true}
+    duration={500}
+    className="text-white cursor-pointer hover:text-purple-400"
+  >
+    Home
+  </ScrollLink>
+) : null}
+          {!location.pathname.startsWith("/blog") ? (
+              <ScrollLink
               to="courses"
               smooth={true}
               duration={500}
@@ -52,7 +55,13 @@ export function Navbar() {
             >
               Courses
             </ScrollLink>
-            <ScrollLink
+          ) : (
+            <Link to="/blog" className="text-white cursor-pointer hover:text-purple-400">
+            
+          </Link>
+          )}
+            { !location.pathname.startsWith("/blog") ? (
+              <ScrollLink
               to="about"
               smooth={true}
               duration={500}
@@ -60,14 +69,20 @@ export function Navbar() {
             >
               About
             </ScrollLink>
-            <ScrollLink
-              to="blog"
-              smooth={true}
-              duration={500}
-              className="text-white cursor-pointer hover:text-purple-400"
-            >
+          ) : (
+            <Link to="/blog" className="text-white cursor-pointer hover:text-purple-400">
+            
+          </Link>
+          )}
+            { !location.pathname.startsWith("/blog") ? (
+              <Link to="/blog" className="text-white cursor-pointer hover:text-purple-400">
               Blog
-            </ScrollLink>
+            </Link>
+          ) : (
+            <Link to="/blog" className="text-white cursor-pointer hover:text-purple-400">
+            
+          </Link>
+          )}
           </div>
           <div className="flex items-center justify-between">
             {/* WhatsApp Button */}
@@ -178,42 +193,57 @@ export function Navbar() {
         <div className="flex flex-col items-center justify-center h-full space-y-6" style={{
           marginTop: "-100px"
         }}>
-          <ScrollLink
-            to="home"
-            smooth={true}
-            duration={500}
-            className="text-white text-2xl cursor-pointer"
-            onClick={() => setMenuOpen(false)}
-          >
-            Home
-          </ScrollLink>
-          <ScrollLink
-            to="courses"
-            smooth={true}
-            duration={500}
-            className="text-white text-2xl cursor-pointer"
-            onClick={() => setMenuOpen(false)}
-          >
-            Courses
-          </ScrollLink>
-          <ScrollLink
-            to="about"
-            smooth={true}
-            duration={500}
-            className="text-white text-2xl cursor-pointer"
-            onClick={() => setMenuOpen(false)}
-          >
-            About
-          </ScrollLink>
-          <ScrollLink
-            to="blog"
-            smooth={true}
-            duration={500}
-            className="text-white text-2xl cursor-pointer"
-            onClick={() => setMenuOpen(false)}
-          >
-            Blog
-          </ScrollLink>
+           {!location.pathname.startsWith("/blog") ? (
+              <ScrollLink
+              to="home"
+              smooth={true}
+              duration={500}
+              className="text-white cursor-pointer hover:text-purple-400"
+            >
+              Home
+            </ScrollLink>
+          ) : (
+            <Link to="/blog" className="text-white cursor-pointer hover:text-purple-400">
+            
+          </Link>
+          )}
+           { !location.pathname.startsWith("/blog") ? (
+              <ScrollLink
+              to="courses"
+              smooth={true}
+              duration={500}
+              className="text-white cursor-pointer hover:text-purple-400"
+            >
+              Courses
+            </ScrollLink>
+          ) : (
+            <Link to="/blog" className="text-white cursor-pointer hover:text-purple-400">
+            
+          </Link>
+          )}
+          {!location.pathname.startsWith("/blog") ? (
+              <ScrollLink
+              to="about"
+              smooth={true}
+              duration={500}
+              className="text-white cursor-pointer hover:text-purple-400"
+            >
+              About
+            </ScrollLink>
+          ) : (
+            <Link to="/blog" className="text-white cursor-pointer hover:text-purple-400">
+            
+          </Link>
+          )}
+           { !location.pathname.startsWith("/blog") ? (
+               <Link to="/blog" className="text-white cursor-pointer hover:text-purple-400">
+             Blog
+               </Link>
+          ) : (
+            <Link to="/blog" className="text-white cursor-pointer hover:text-purple-400">
+            
+          </Link>
+          )}
 
           <SignedOut>
             <SignInButton mode="modal">

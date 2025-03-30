@@ -7,6 +7,7 @@ import Instagram from '../../Icons/instagram.png'
 import Twitter from '../../Icons/twitter.png'
 import Linkedin from '../../Icons/linkedin.png'
 import LegalLinks from '../LegalLink/LegalLinks';
+import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
   return (
@@ -41,27 +42,43 @@ const Footer: React.FC = () => {
           <h4>Quick Links</h4>
           <ul>
             <li>
-              <ScrollLink to="home" smooth={true} duration={500} className="text-white cursor-pointer">
-                Home
-              </ScrollLink>
+             {!location.pathname.startsWith("/blog") ? (
+               <ScrollLink to="home" smooth={true} duration={500} className="text-white cursor-pointer">
+               Home
+             </ScrollLink>
+             ) :
+             <Link to="/"  className="text-white cursor-pointer">
+             Home
+           </Link>
+             }
             </li>
             <li>
-              <ScrollLink to="courses" smooth={true} duration={500} className="text-white cursor-pointer">
-                Courses
-
-              </ScrollLink>
+             {!location.pathname.startsWith("/blog") ? (
+               <ScrollLink to="courses" smooth={true} duration={500} className="text-white cursor-pointer">
+               Courses
+             </ScrollLink>
+             ):(
+              null
+             )}
+            </li>
+            <li>
+          {!location.pathname.startsWith("/blog") ? (
+            <ScrollLink to="about" smooth={true} duration={500} className="text-white cursor-pointer">
+            About
+          </ScrollLink>
+          ):(
+            null
+          )}
             </li>
             <li>
 
-              <ScrollLink to="about" smooth={true} duration={500} className="text-white cursor-pointer">
-                About
-              </ScrollLink>
-            </li>
-            <li>
-
-              <ScrollLink to="blog" smooth={true} duration={500} className="text-white cursor-pointer">
-                Blog
-              </ScrollLink>
+            {!location.pathname.startsWith("/blog") ? (
+               <ScrollLink to="blog" smooth={true} duration={500} className="text-white cursor-pointer">
+               Blog
+             </ScrollLink>
+            ) : (
+             null
+            )}
             </li>
           </ul>
         </div>
