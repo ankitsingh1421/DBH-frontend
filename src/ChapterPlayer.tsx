@@ -123,10 +123,10 @@ const ChapterPlayer = () => {
     );
 
     return (
-        <div className="flex flex-col md:flex-row h-screen w-full bg-gray-100 home-container ">
+        <div className="flex flex-col md:flex-row h-screen w-full bg-gray-100 home-container " >
             <Navbar/>
             {/* Mobile Header */}
-            <div className="md:hidden bg-white shadow-md p-4 flex justify-between items-center z-50 ">
+            <div className="md:hidden mt-20 shadow-md p-4 flex justify-between items-center z-50 " >
                 <button 
                     onClick={() => setIsSidebarOpen(!isSidebarOpen)} 
                     className="text-2xl transition-transform duration-300 ease-in-out"
@@ -138,9 +138,9 @@ const ChapterPlayer = () => {
 
             {/* Sidebar */}
             
-            <div className={`fixed md:sticky top-0 w-64 bg-white shadow-lg h-[calc(100%-4rem)] md:h-screen transition-all duration-300 ease-in-out z-40 overflow-y-auto
+            <div className={` md:sticky mt-20 w-64  shadow-lg h-[calc(100%-4rem)] md:h-screen transition-all duration-300 ease-in-out z-40 overflow-y-auto
                 ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"} md:translate-x-0`}>
-                    <h2 className="text-xl font-bold">Course Chapters</h2>
+                    <h2 className="text-xl text-white font-bold">Course Chapters</h2>
                 <div className="p-4">
                     <ul>
                         {course?.chapters.map((chapter, index) => (
@@ -174,10 +174,10 @@ const ChapterPlayer = () => {
             {/* Main Content */}
                      
 
-            <div className="flex-1 md:overflow-y-auto">
+            <div className="flex-1 md:overflow-y-auto mt-10 ">
                 {/* Video Section */}
                 <div className="w-full p-6">
-                    <h1 className="text-3xl font-semibold mb-4">{selectedVideo?.title}</h1>
+                    <h1 className="text-3xl font-semibold mb-4 text-white">{selectedVideo?.title}</h1>
                     <div className="relative">
                         <video 
                             ref={videoRef} 

@@ -21,7 +21,7 @@ function App() {
           <Route path="/course/:id" element={<CourseDetail />} />
 
           {/* New route for playing video */}
-          <Route path="/course/play/:id" element={<ChapterPlayer />} />
+          {/* <Route path="/course/play/:id" element={<ChapterPlayer />} /> */}
 
           
           <Route path="/blog/:id" element={<BlogPost />} />
