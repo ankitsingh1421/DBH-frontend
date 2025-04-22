@@ -8,11 +8,11 @@ import '../styles/blogbutton.css'
 import Footer from '../components/Footer/Footer';
 const BlogList = () => {
   return (
-    <div className="container mx-auto  py-2 home-container">
+    <div className="container    mx-auto  py-2 px-2 home-container">
         <div style={{marginTop:"-10px"}} >
      <Navbar/>
      </div>
-     <div className="hero-and-description flex   flex-col gap-1 items-center justify-center my-20">
+     <div className="hero-and-description flex flex-col gap-1 items-center justify-center my-20">
             <h1 className="hero w-fit h-fit text-2xl sm:text-3xl md:text-4xl font-bold text-center text-wrap text-neutral-800 ">
             <button className="btn-53">
   <div className="original text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500"> Melody Journal 🎵 </div>

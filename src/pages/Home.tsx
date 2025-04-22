@@ -1,18 +1,13 @@
-import React from 'react';
 import { Navbar } from '../components/Navbar/Navbar';
 import { Hero } from '../components/Hero/Hero';
 import { Welcome } from '../components/Welcome/Welcome';
 import { Vision } from '../components/Vision/Vision';
-import Courses from '../components/Courses/Courses';
-import { Offers } from '../components/Offers/offers';
 import Internship from '../Internship/Internship';
 import About from '../components/about/About';
 import Contact from '../components/Contact/Contact';
 import Footer from '../components/Footer/Footer';
 import './Home.css'
-import YouTubeVideos from '../components/youtube/Yt';
-import CoverSongs from '../components/coverSongs/CoverSongs';
-import BollyTutorial from '../components/bollltutorial/bollyTutorial';
+import YouTubeVideos from '../components/youtube/FacilitiesSection';
 
 
 

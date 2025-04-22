@@ -2,10 +2,6 @@ import React from 'react';
 // import { Link } from 'react-router-dom';
 import './Footer.css';
 import { Link as ScrollLink } from 'react-scroll'; // Import react-scroll's Link
-import Facebook from '../../Icons/facebook.png'
-import Instagram from '../../Icons/instagram.png'
-import Twitter from '../../Icons/twitter.png'
-import Linkedin from '../../Icons/linkedin.png'
 import LegalLinks from '../LegalLink/LegalLinks';
 import { Link } from 'react-router-dom';
 
@@ -23,8 +19,8 @@ const Footer: React.FC = () => {
   </p>
   <p>
     Contact Number :  
-    <a href="tel:9836311375" className="text-white hover:underline">
-       9836311375
+    <a href="tel:9389916233" className="text-white hover:underline">
+       9389916233
     </a>
   </p>
 
